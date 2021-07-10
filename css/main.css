@@ -12,7 +12,7 @@ body {
 
 .heading {
   margin: 0;
-  padding: 10%;
+  padding: 5%;
 }
 
 #priyam {
@@ -77,6 +77,10 @@ p {
   flex-direction: column;
   overflow: hidden;
   align-items: center;
+}
+
+.mountain {
+  margin-top: auto;
 }
 
 .middle-container {
