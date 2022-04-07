@@ -102,6 +102,7 @@
 }
 
 .btn:hover {
+  color: var(--text-color-light);
   background: var(--seconday-color);
   transition: all var(--animation-time) linear;
 }
@@ -152,6 +153,10 @@
 }
 
 @media screen and (max-width: 800px) {
+  .profile-img {
+    width: 40%;
+  }
+
   .top-container {
     padding-left: 10%;
     padding-right: 10%;
