@@ -1,0 +1,175 @@
+.heading {
+  margin: 0;
+  padding: 5%;
+}
+
+#priyam {
+  font-size: 5.625rem;
+  font-family: "Sacramento", cursive;
+  color: var(--accent-color);
+  margin: 0;
+}
+
+#a-tech {
+  padding: 0;
+  margin: 0;
+}
+
+.top-container {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-color);
+  padding-top: 2.5%;
+  padding-left: 20%;
+  padding-right: 20%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  align-items: center;
+}
+
+.mountain {
+  margin-top: auto;
+}
+
+.middle-container {
+  margin: 100px 0;
+}
+
+.top-cloud {
+  align-self: flex-start;
+}
+
+.bottom-cloud {
+  align-self: flex-end;
+}
+
+.intro {
+  width: 30%;
+  margin: auto;
+}
+
+.skills {
+  margin: 100px auto;
+}
+
+.skill-row {
+  width: 50%;
+  margin: 100px auto;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skill-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.skill-img {
+  width: 25%;
+}
+
+.profile-img {
+  width: 20%;
+}
+
+.contact-me h3 {
+  font-family: "Sacramento";
+  font-size: 2.5rem;
+  margin: 70px 0;
+}
+
+.contact-message {
+  width: 40%;
+  margin: 40px auto 60px auto;
+}
+
+.btn {
+  background: var(--accent-color);
+  border-radius: 8px;
+  color: var(--text-color-light);
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  text-decoration: none;
+  text-align: center;
+  transition: all var(--animation-time) linear;
+}
+
+.btn:hover {
+  background: var(--seconday-color);
+  transition: all var(--animation-time) linear;
+}
+
+.copyright {
+  color: var(--seconday-color);
+  font-size: 0.75rem;
+  padding: 20px 0;
+}
+
+#tech {
+  text-decoration: underline;
+}
+
+#webdev-img {
+  margin-right: 30px;
+}
+
+#poker-img {
+  margin-left: 30px;
+}
+
+.bottom-container {
+  background-color: var(--accent-color);
+  padding: 50px 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-link-box {
+  display: flex;
+  flex-direction: row;
+}
+
+.footer-link span {
+  color: var(--seconday-color);
+  font-family: 'icons';
+  font-size: 1.5rem;
+  margin: 10px 20px;
+  transition: all var(--animation-time) linear;
+}
+
+.footer-link span:hover {
+  color: var(--primary-color);
+  transition: all var(--animation-time) linear;
+}
+
+@media screen and (max-width: 800px) {
+  .top-container {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  .top-cloud {
+    width: 30%;
+  }
+
+  .bottom-cloud {
+    width: 30%;
+  }
+
+  .intro {
+    width: 60%;
+  }
+
+  .skill-row {
+    width: 80%;
+  }
+}

@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'icons';
+    src: url('icons.woff');
+}
+
+.icon-heart:before { content: '\e800'; } /* '' */
+.icon-twitter:before { content: '\f099'; } /* '' */
+.icon-github:before { content: '\f09b'; } /* '' */
+.icon-instagram:before { content: '\f16d'; } /* '' */
