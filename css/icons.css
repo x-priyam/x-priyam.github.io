@@ -3,7 +3,28 @@
     src: url('icons.woff');
 }
 
-.icon-heart:before { content: '\e800'; } /* '' */
-.icon-twitter:before { content: '\f099'; } /* '' */
-.icon-github:before { content: '\f09b'; } /* '' */
-.icon-instagram:before { content: '\f16d'; } /* '' */
+.icon-heart:before {
+    content: '\2665';
+}
+
+/* '♥' */
+.icon-twitter:before {
+    content: '\f099';
+}
+
+/* '' */
+.icon-github:before {
+    content: '\f09b';
+}
+
+/* '' */
+.icon-linkedin:before {
+    content: '\f0e1';
+}
+
+/* '' */
+.icon-instagram:before {
+    content: '\f16d';
+}
+
+/* '' */

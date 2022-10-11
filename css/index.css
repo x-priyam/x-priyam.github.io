@@ -3,14 +3,14 @@
   padding: 5%;
 }
 
-#priyam {
+#name {
   font-size: 5.625rem;
   font-family: "Sacramento", cursive;
   color: var(--accent-color);
   margin: 0;
 }
 
-#a-tech {
+#bio {
   padding: 0;
   margin: 0;
 }
@@ -91,30 +91,24 @@
 .btn {
   background: var(--accent-color);
   border-radius: 8px;
-  color: var(--text-color-light);
+  color: #ffffff;
   font-family: "Montserrat", sans-serif;
   font-size: 1.25rem;
   font-weight: bold;
   padding: 10px 20px;
   text-decoration: none;
   text-align: center;
-  transition: all var(--animation-time) linear;
 }
 
 .btn:hover {
-  color: var(--text-color-light);
+  color: #ffffff;
   background: var(--seconday-color);
-  transition: all var(--animation-time) linear;
 }
 
 .copyright {
   color: var(--seconday-color);
   font-size: 0.75rem;
   padding: 20px 0;
-}
-
-#tech {
-  text-decoration: underline;
 }
 
 #webdev-img {
@@ -144,12 +138,10 @@
   font-family: 'icons';
   font-size: 1.5rem;
   margin: 10px 20px;
-  transition: all var(--animation-time) linear;
 }
 
 .footer-link span:hover {
   color: var(--primary-color);
-  transition: all var(--animation-time) linear;
 }
 
 @media screen and (max-width: 800px) {
