@@ -22,21 +22,22 @@
   position: absolute;
   left: calc(50% - 2rem);
   transition: opacity calc(3 * var(--animation-time)) linear;
+  opacity: 0;
 }
 
-#theme-button.light-theme .icon-light {
+#theme-button.light-theme #icon-light {
   opacity: 1;
 }
 
-#theme-button.light-theme .icon-dark {
+#theme-button.light-theme #icon-dark {
   opacity: 0;
 }
 
-#theme-button.dark-theme .icon-light {
+#theme-button.dark-theme #icon-light {
   opacity: 0;
 }
 
-#theme-button.dark-theme .icon-dark {
+#theme-button.dark-theme #icon-dark {
   opacity: 1;
 }
 
