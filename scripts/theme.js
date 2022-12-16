@@ -19,7 +19,6 @@ function switchTheme() {
     if (themeElementClass.contains("light-theme")) {
         setTheme("dark");
     } else {
-        console.log("test");
         setTheme("light");
     }
 }
@@ -41,3 +40,6 @@ function setTheme(theme) {
         console.log("error in setting theme");
     }
 }
+
+document.querySelector("#theme-button").addEventListener("click", switchTheme);
+window.addEventListener("load", loadMqTheme);
