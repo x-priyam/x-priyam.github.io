@@ -1,89 +1,113 @@
+/* initial wallpaper */
+.top-container {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-color);
+  padding: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* skill images are from an icon-font */
+/* size of images must be set by font-size */
+/* CSS doesn't support setting font-size according to parent width */
+/* this we use JS to set value of computer width to font size */
+/* scripts/iconSize.js */
+.cloud {
+  width: 20%;
+}
+
+.cloud:nth-of-type(1) {
+  align-self: flex-start;
+}
+
 .heading {
   margin: 0;
   padding: 5%;
 }
 
-#name {
+/* webpage heading */
+.heading h1 {
   font-size: 5.625rem;
   font-family: "Sacramento", cursive;
   color: var(--accent-color);
   margin: 0;
 }
 
-#theme-button {
-  font-size: 4rem;
-  position: relative;
-}
-
-#theme-button iconify-icon {
-  color: var(--accent-color);
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  left: calc(50% - 2rem);
-  transition: opacity calc(3 * var(--animation-time)) linear;
-  opacity: 0;
-}
-
-#theme-button.light-theme #icon-light {
-  opacity: 1;
-}
-
-#theme-button.light-theme #icon-dark {
-  opacity: 0;
-}
-
-#theme-button.dark-theme #icon-light {
-  opacity: 0;
-}
-
-#theme-button.dark-theme #icon-dark {
-  opacity: 1;
-}
-
-.top-container {
-  box-sizing: border-box;
-  width: 100%;
-  height: 100%;
-  background-color: var(--primary-color);
-  padding-top: 2.5%;
-  padding-left: 20%;
-  padding-right: 20%;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  align-items: center;
-}
-
-.mountain {
-  margin-top: auto;
-}
-
-.middle-container {
-  margin: 100px 0;
-}
-
-.top-cloud {
-  align-self: flex-start;
-}
-
-.bottom-cloud {
+.cloud:nth-of-type(2) {
   align-self: flex-end;
 }
 
+/* theme switch button */
+#theme-switch {
+  min-height: 10%;
+  height: 20%;
+  width: auto;
+  fill: var(--accent-color);
+}
+
+#theme-switch * {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+#theme-switch:hover {
+  transform: scale(1.25);
+}
+
+/* to change svg icon when theme is changed */
+:root.light-theme #theme-switch #sun-circle {
+  opacity: 1;
+}
+
+:root.light-theme #theme-switch #sun-rays {
+  opacity: 1;
+  transform: scale(1);
+  transition-delay: var(--animation-time);
+}
+
+:root.light-theme #theme-switch #moon {
+  opacity: 0;
+}
+
+:root.dark-theme #theme-switch #sun-circle {
+  opacity: 0;
+  transition-delay: var(--animation-time);
+}
+
+:root.dark-theme #theme-switch #sun-rays {
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+:root.dark-theme #theme-switch #moon {
+  opacity: 1;
+}
+
+/* main content */
+.middle-container {
+  margin: 5rem 0;
+}
+
+.profile-img {
+  width: 40%;
+}
+
 .intro {
-  width: 30%;
+  width: 60%;
   margin: auto;
 }
 
 .skills {
-  margin: 100px auto;
+  margin: 5rem auto;
 }
 
 .skill-row {
-  width: 50%;
-  margin: 100px auto;
-  text-align: left;
+  width: 80%;
+  margin: 5rem auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -93,35 +117,53 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  gap: 1rem;
 }
 
+/* odd numbered skills have images at left */
+.skill-row:nth-of-type(odd) .skill-box p {
+  text-align: left;
+}
+
+/* even numbered skills have images at right */
+.skill-row:nth-of-type(even) .skill-box p {
+  text-align: right;
+}
+
+.skill-box p {
+  width: 75%;
+}
+
+/* skill images are from an icon-font */
+/* size of images must be set by font-size */
+/* CSS doesn't support setting font-size according to parent width */
+/* this we use JS to set value of computer width to font size */
+/* scripts/iconSize.js */
 .skill-img {
   width: 25%;
+  margin: auto 1rem;
 }
 
-.profile-img {
-  width: 20%;
-}
-
+/* contact section */
 .contact-me h3 {
   font-family: "Sacramento";
   font-size: 2.5rem;
-  margin: 70px 0;
+  margin: 3rem 0;
 }
 
 .contact-message {
   width: 40%;
-  margin: 40px auto 60px auto;
+  margin: 2rem auto 3rem auto;
 }
 
 .btn {
   background: var(--accent-color);
-  border-radius: 8px;
+  border-radius: 0.5rem;
   color: #ffffff;
   font-family: "Montserrat", sans-serif;
   font-size: 1.25rem;
   font-weight: bold;
-  padding: 10px 20px;
+  padding: 0.5rem 1.25rem;
   text-decoration: none;
   text-align: center;
 }
@@ -131,20 +173,7 @@
   background: var(--seconday-color);
 }
 
-.copyright {
-  color: var(--seconday-color);
-  font-size: 0.75rem;
-  padding: 20px 0;
-}
-
-#webdev-img {
-  margin-right: 30px;
-}
-
-#poker-img {
-  margin-left: 30px;
-}
-
+/* webpage footer */
 .bottom-container {
   background-color: var(--accent-color);
   padding: 50px 0 20px 0;
@@ -169,29 +198,30 @@
   color: var(--primary-color);
 }
 
-@media screen and (max-width: 800px) {
-  .profile-img {
-    width: 40%;
-  }
+.copyright {
+  color: var(--seconday-color);
+  font-size: 0.75rem;
+  padding: 1rem 0;
+}
 
+@media screen and (min-width: 800px) {
   .top-container {
-    padding-left: 10%;
-    padding-right: 10%;
+    padding: 10% 25%;
   }
 
-  .top-cloud {
-    width: 30%;
+  .cloud {
+    width: 10%;
   }
 
-  .bottom-cloud {
-    width: 30%;
+  .profile-img {
+    width: 20%;
   }
 
   .intro {
-    width: 60%;
+    width: 30%;
   }
 
   .skill-row {
-    width: 80%;
+    width: 50%;
   }
 }

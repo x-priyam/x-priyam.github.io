@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap");
 
 :root {
   --animation-time: 300ms;
@@ -6,6 +6,8 @@
   --seconday-color: #11999e;
 }
 
+/* theme variables are added by JS */
+/* scripts/theme.js */
 :root.light-theme {
   --background-color: #ffffff;
   --primary-color: #eafffb;
@@ -21,7 +23,7 @@
 * {
   transition-duration: var(--animation-time);
   transition-timing-function: linear;
-  transition-property: background-color, color;
+  transition-property: background-color, color, filter, transform, opacity;
 }
 
 html,
@@ -43,7 +45,7 @@ h2 {
   font-size: 2.5rem;
   color: var(--accent-color);
   font-weight: normal;
-  padding-bottom: 10px;
+  padding-bottom: 0.5rem;
 }
 
 a {
@@ -74,4 +76,10 @@ hr {
 
 p {
   line-height: 2;
+}
+
+iconify-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
