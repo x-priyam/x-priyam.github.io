@@ -88,6 +88,8 @@
 }
 
 /* main content */
+
+/* intro section */
 .middle-container {
   margin: 5rem 0;
 }
@@ -101,6 +103,68 @@
   margin: auto;
 }
 
+/* projects section */
+.project-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  margin: auto 30px;
+}
+
+.project-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--accent-color);
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.project-box .project-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.project-description h3 {
+  color: var(--background-color);
+}
+
+.project-description hr {
+  margin: 0 auto;
+  border-style: solid;
+  border-radius: 1rem;
+  border-width: 3px;
+  width: 95%;
+  border-color: var(--seconday-color);
+}
+
+.project-description p {
+  width: 90%;
+  color: var(--background-color);
+}
+
+.project-box .project-links {
+  gap: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.project-box .project-links a {
+  color: var(--background-color);
+  font-size: 1.5rem;
+}
+
+.project-box a:hover {
+  transform: scale(1.25);
+}
+
+/* skills section */
 .skills {
   margin: 5rem auto;
 }
@@ -219,6 +283,15 @@
 
   .intro {
     width: 30%;
+  }
+
+  .project-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .project-box {
+    width: 25%;
   }
 
   .skill-row {
