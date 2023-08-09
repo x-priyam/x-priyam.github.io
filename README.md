@@ -1,4 +1,5 @@
 # My Page
+
 A basic webpage about me
 
-_Link:_ https://xpsybit.github.io/my-page/
+_Link:_ https://x-priyam.github.io/my-page/
