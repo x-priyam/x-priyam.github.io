@@ -4,22 +4,19 @@
   --animation-time: 300ms;
   --accent-color: #66bfbf;
   --seconday-color: #11999e;
+
+  /* dark theme */
+  color-scheme: dark;
+  --background-color: #282828;
+  --primary-color: #cee6e1;
+  --text-color: #ffffff;
 }
 
-/* theme variables are added by JS */
-/* scripts/theme.js */
 :root.light-theme {
   color-scheme: light;
   --background-color: #ffffff;
   --primary-color: #eafffb;
   --text-color: #40514e;
-}
-
-:root.dark-theme {
-  color-scheme: dark;
-  --background-color: #282828;
-  --primary-color: #cee6e1;
-  --text-color: #ffffff;
 }
 
 * {

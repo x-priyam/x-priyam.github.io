@@ -11,11 +11,10 @@
   justify-content: space-between;
 }
 
-/* skill images are from an icon-font */
+/* A lot of images are from an icon-font */
 /* size of images must be set by font-size */
 /* CSS doesn't support setting font-size according to parent width */
 /* this we use JS to set value of computer width to font size */
-/* scripts/iconSize.js */
 .cloud {
   width: 20%;
 }
@@ -73,17 +72,17 @@
   opacity: 0;
 }
 
-:root.dark-theme #theme-switch #sun-circle {
+#theme-switch #sun-circle {
   opacity: 0;
   transition-delay: var(--animation-time);
 }
 
-:root.dark-theme #theme-switch #sun-rays {
+#theme-switch #sun-rays {
   opacity: 0;
   transform: scale(0.5);
 }
 
-:root.dark-theme #theme-switch #moon {
+#theme-switch #moon {
   opacity: 1;
 }
 

@@ -1,314 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Priyam</title>
-    <link rel="icon" href="https://api.iconify.design/noto-v1/pizza.svg" />
 
-    <!-- stylesheets -->
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/index.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Priyam</title>
+  <link rel="icon" href="https://api.iconify.design/noto-v1/pizza.svg" />
 
-    <!-- scripts -->
-    <script defer src="scripts/theme.js"></script>
-    <script defer src="scripts/iconSize.js"></script>
+  <!-- stylesheets -->
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/index.css" />
 
-    <!-- icon library -->
-    <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
-  </head>
+  <!-- scripts -->
+  <script defer src="App.js"></script>
 
-  <body>
-    <!-- initial wallpaper -->
-    <div class="top-container">
-      <iconify-icon class="cloud" icon="ph:cloud-fill"></iconify-icon>
-      <div class="heading">
-        <h1>I'm Priyam.</h1>
-      </div>
-      <iconify-icon class="cloud" icon="ic:baseline-cloud"></iconify-icon>
+  <!-- icon library -->
+  <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
+</head>
 
-      <!-- theme switch button -->
-      <svg
-        id="theme-switch"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g id="sun">
-          <path
-            id="sun-rays"
-            d="M 12 19 C 12.552 19 13 19.448 13 20 L 13 21 C 13 21.77 12.167 22.251 11.5 21.866 C 11.191 21.687 11 20 11 20 C 11 19.448 11.448 19 12 19 Z M 18.364 16.95 L 19.071 17.657 C 19.606 18.211 19.341 19.136 18.594 19.322 C 18.259 19.405 17.905 19.311 17.657 19.071 L 16.95 18.364 C 16.415 17.81 16.68 16.885 17.427 16.699 C 17.762 16.616 18.116 16.71 18.364 16.95 Z M 5.636 16.95 C 6.181 16.407 7.11 16.657 7.308 17.401 C 7.388 17.702 7.324 18.023 7.133 18.27 L 7.05 18.364 L 6.343 19.071 C 5.798 19.614 4.869 19.364 4.671 18.62 C 4.591 18.319 4.655 17.998 4.846 17.751 L 4.929 17.657 L 5.636 16.95 Z M 4 11 C 4.77 11.001 5.25 11.835 4.864 12.501 C 4.707 12.773 4.43 12.956 4.117 12.993 L 4 13 L 3 13 C 2.23 12.999 1.75 12.165 2.136 11.499 C 2.293 11.227 2.57 11.044 2.883 11.007 L 3 11 L 4 11 Z M 21 11 C 21.77 11 22.251 11.833 21.866 12.5 C 21.687 12.809 21.357 13 21 13 L 20 13 C 19.23 13 18.749 12.167 19.134 11.5 C 19.313 11.191 19.643 11 20 11 L 21 11 Z M 4.929 4.929 C 5.285 4.573 5.851 4.537 6.249 4.846 L 6.343 4.929 L 7.05 5.636 C 7.593 6.181 7.343 7.11 6.599 7.308 C 6.298 7.388 5.977 7.324 5.73 7.133 L 5.636 7.05 L 4.929 6.343 C 4.539 5.953 4.539 5.319 4.929 4.929 Z M 19.071 4.929 C 19.461 5.319 19.461 5.953 19.071 6.343 L 18.364 7.05 C 17.829 7.604 16.896 7.371 16.683 6.631 C 16.582 6.275 16.684 5.893 16.95 5.636 L 17.657 4.929 C 18.047 4.539 18.681 4.539 19.071 4.929 Z M 12 2 C 12.552 2 13 2.448 13 3 L 13 4 C 13 4.77 12.167 5.251 11.5 4.866 C 11.191 4.687 11 4.357 11 4 L 11 3 C 11 2.448 11.448 2 12 2 Z"
-          />
-          <path
-            id="sun-circle"
-            d="M 12 6 C 16.619 6 19.506 11 17.196 15 C 16.124 16.856 14.144 18 12 18 C 7.381 18 4.494 13 6.804 9 C 7.876 7.144 9.856 6 12 6 Z"
-          />
-        </g>
-        <g id="moon">
-          <path
-            d="M 11.989 6.015 C 7.383 6.016 4.505 11.033 6.809 15.048 C 9.113 19.061 14.869 19.059 17.172 15.046 C 17.3 14.82 17.413 14.587 17.512 14.346 C 17.718 13.853 17.231 13.359 16.736 13.556 C 13.962 14.688 11.01 12.374 11.427 9.39 C 11.548 8.497 11.975 7.676 12.631 7.062 L 12.676 7.017 C 13.006 6.635 12.744 6.019 12.223 6.019 L 12.065 6.019 L 12.024 6.016 L 11.987 6.015 L 11.989 6.015 Z"
-          />
-        </g>
-      </svg>
+<body>
+  <!-- initial wallpaper -->
+  <div class="top-container">
+    <iconify-icon class="cloud" icon="ph:cloud-fill"></iconify-icon>
+    <div class="heading">
+      <h1>I'm Priyam.</h1>
     </div>
+    <iconify-icon class="cloud" icon="ic:baseline-cloud"></iconify-icon>
 
-    <!-- main content -->
-    <div class="middle-container">
-      <!-- intro/bio -->
-      <div class="profile">
-        <img class="profile-img" src="images/priyam.png" alt="priyam-img" />
-        <h2>Hey!</h2>
-        <p class="intro">
-          I'm a Master of Computer Applications student @
-          <a
-            href="https://jaipur.manipal.edu/fos/programs/program-list/master-of-computer-applications.html"
-            target="_blank"
-          >
-            Manipal University Jaipur.
-          </a>
-          I did my Bachelor of Business Administration from
-          <a
-            href="https://www.iimrohtak.ac.in/index.php/programmes/ipm"
-            target="blank"
-          >
-            IIM Rohtak.
-          </a>
-          I know, big switch. Sometimes you just gotta follow the heart. Poker
-          is my go to party game and F1 my sports talk. Yes, the valorant
-          addiction is real.
-        </p>
-      </div>
-      <hr />
+    <!-- theme switch button -->
+    <svg id="theme-switch" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <g id="sun">
+        <path id="sun-rays"
+          d="M 12 19 C 12.552 19 13 19.448 13 20 L 13 21 C 13 21.77 12.167 22.251 11.5 21.866 C 11.191 21.687 11 20 11 20 C 11 19.448 11.448 19 12 19 Z M 18.364 16.95 L 19.071 17.657 C 19.606 18.211 19.341 19.136 18.594 19.322 C 18.259 19.405 17.905 19.311 17.657 19.071 L 16.95 18.364 C 16.415 17.81 16.68 16.885 17.427 16.699 C 17.762 16.616 18.116 16.71 18.364 16.95 Z M 5.636 16.95 C 6.181 16.407 7.11 16.657 7.308 17.401 C 7.388 17.702 7.324 18.023 7.133 18.27 L 7.05 18.364 L 6.343 19.071 C 5.798 19.614 4.869 19.364 4.671 18.62 C 4.591 18.319 4.655 17.998 4.846 17.751 L 4.929 17.657 L 5.636 16.95 Z M 4 11 C 4.77 11.001 5.25 11.835 4.864 12.501 C 4.707 12.773 4.43 12.956 4.117 12.993 L 4 13 L 3 13 C 2.23 12.999 1.75 12.165 2.136 11.499 C 2.293 11.227 2.57 11.044 2.883 11.007 L 3 11 L 4 11 Z M 21 11 C 21.77 11 22.251 11.833 21.866 12.5 C 21.687 12.809 21.357 13 21 13 L 20 13 C 19.23 13 18.749 12.167 19.134 11.5 C 19.313 11.191 19.643 11 20 11 L 21 11 Z M 4.929 4.929 C 5.285 4.573 5.851 4.537 6.249 4.846 L 6.343 4.929 L 7.05 5.636 C 7.593 6.181 7.343 7.11 6.599 7.308 C 6.298 7.388 5.977 7.324 5.73 7.133 L 5.636 7.05 L 4.929 6.343 C 4.539 5.953 4.539 5.319 4.929 4.929 Z M 19.071 4.929 C 19.461 5.319 19.461 5.953 19.071 6.343 L 18.364 7.05 C 17.829 7.604 16.896 7.371 16.683 6.631 C 16.582 6.275 16.684 5.893 16.95 5.636 L 17.657 4.929 C 18.047 4.539 18.681 4.539 19.071 4.929 Z M 12 2 C 12.552 2 13 2.448 13 3 L 13 4 C 13 4.77 12.167 5.251 11.5 4.866 C 11.191 4.687 11 4.357 11 4 L 11 3 C 11 2.448 11.448 2 12 2 Z" />
+        <path id="sun-circle"
+          d="M 12 6 C 16.619 6 19.506 11 17.196 15 C 16.124 16.856 14.144 18 12 18 C 7.381 18 4.494 13 6.804 9 C 7.876 7.144 9.856 6 12 6 Z" />
+      </g>
+      <g id="moon">
+        <path
+          d="M 11.989 6.015 C 7.383 6.016 4.505 11.033 6.809 15.048 C 9.113 19.061 14.869 19.059 17.172 15.046 C 17.3 14.82 17.413 14.587 17.512 14.346 C 17.718 13.853 17.231 13.359 16.736 13.556 C 13.962 14.688 11.01 12.374 11.427 9.39 C 11.548 8.497 11.975 7.676 12.631 7.062 L 12.676 7.017 C 13.006 6.635 12.744 6.019 12.223 6.019 L 12.065 6.019 L 12.024 6.016 L 11.987 6.015 L 11.989 6.015 Z" />
+      </g>
+    </svg>
+  </div>
 
-      <!-- projects section -->
-      <div class="projects">
-        <h2>Projects.</h2>
-        <div class="project-container">
-          <div class="project-box">
-            <div class="project-description">
-              <h3>IIM Assignments</h3>
-              <hr />
-              <p>
-                A repository of 3 Assignments which were done as part of the Web
-                Development Basics course (BBA-IPM)
-                <br />
-                <br />
-                HTML, CSS and JS
-              </p>
-            </div>
-            <div class="project-links">
-              <a
-                href="https://x-priyam.github.io/Assignments/IIMR%20-%20IPM%20(Web%20Based%20Development)/Assignment%201/"
-                target="_blank"
-              >
-                <iconify-icon icon="healthicons:1-negative"></iconify-icon>
-              </a>
-              <a
-                href="https://x-priyam.github.io/Assignments/IIMR%20-%20IPM%20(Web%20Based%20Development)/Assignment%202/"
-                target="_blank"
-              >
-                <iconify-icon icon="healthicons:2-negative"></iconify-icon>
-              </a>
-              <a
-                href="https://x-priyam.github.io/Assignments/IIMR%20-%20IPM%20(Web%20Based%20Development)/Assignment%203/"
-                target="_blank"
-              >
-                <iconify-icon icon="healthicons:3-negative"></iconify-icon>
-              </a>
-              <a
-                href="https://github.com/x-priyam/Assignments/tree/main/IIMR%20-%20IPM%20(Web%20Based%20Development)"
-                target="_blank"
-              >
-                <iconify-icon icon="mdi:github"></iconify-icon>
-              </a>
-            </div>
-          </div>
-          <div class="project-box">
-            <div class="project-description">
-              <h3>MUJ Web Assignments</h3>
-              <hr />
-              <p>
-                A repository of 2 Assignments which were done as part of the Web
-                Technologies course (MCA-MUJ)
-                <br />
-                <br />
-                Registration Form and Calculator
-                <br />
-                <br />
-                HTML, CSS and JS
-              </p>
-            </div>
-            <div class="project-links">
-              <a
-                href="https://x-priyam.github.io/Assignments/MUJ%20Web%20Technologies%20Assignments/Registration%20Form/"
-                target="_blank"
-              >
-                <iconify-icon icon="mdi:form"></iconify-icon>
-              </a>
-              <a
-                href="https://x-priyam.github.io/Assignments/MUJ%20Web%20Technologies%20Assignments/Calculator/"
-                target="_blank"
-              >
-                <iconify-icon icon="solar:calculator-bold"></iconify-icon>
-              </a>
-              <a
-                href="https://github.com/x-priyam/Assignments/tree/main/MUJ%20Web%20Technologies%20Assignments"
-                target="_blank"
-              >
-                <iconify-icon icon="mdi:github"></iconify-icon>
-              </a>
-            </div>
-          </div>
-          <div class="project-box">
-            <div class="project-description">
-              <h3>MUJ Labs</h3>
-              <hr />
-              <p>
-                A repository of Lab work which was done as part of different
-                subjects in the MCA course from Manipal University Jaipur
-                <br />
-                <br />
-                Web Dev, C, Java and SQL
-              </p>
-            </div>
-            <div class="project-links">
-              <a
-                href="https://github.com/x-priyam/Assignments/tree/main/MUJ%20Web%20Technologies%20Lab"
-                target="_blank"
-              >
-                <iconify-icon icon="ic:round-code"></iconify-icon>
-              </a>
-              <a
-                href="https://github.com/x-priyam/Assignments/tree/main/MUJ%20C%20Programming%20Lab"
-                target="_blank"
-              >
-                <iconify-icon icon="devicon-plain:c"></iconify-icon>
-              </a>
-              <a
-                href="https://github.com/x-priyam/Assignments/tree/main/MUJ%20Java%20Lab"
-                target="_blank"
-              >
-                <iconify-icon icon="nonicons:java-16"></iconify-icon>
-              </a>
-              <a
-                href="https://github.com/x-priyam/Assignments/tree/main/MUJ%20RDBMS%20SQL%20Lab"
-                target="_blank"
-              >
-                <iconify-icon icon="mdi:sql-query"></iconify-icon>
-              </a>
-            </div>
-          </div>
-          <div class="project-box">
-            <div class="project-description">
-              <h3>This Page</h3>
-              <hr />
-              <p>
-                Yup, I made this page myself too. I know.
-                <br />
-                <br />
-                Surprising.
-                <br />
-                <br />
-                HTML, CSS and JS
-              </p>
-            </div>
-            <div class="project-links">
-              <a
-                href="https://github.com/x-priyam/x-priyam.github.io"
-                target="_blank"
-              >
-                <iconify-icon icon="mdi:github"></iconify-icon>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <hr />
+  <!-- main content -->
+  <div class="middle-container">
+    <!-- intro/bio -->
+    <div class="profile">
+      <img class="profile-img" src="images/priyam.png" alt="priyam-img" />
+      <h2>Hey!</h2>
+      <p class="intro">
+        I'm a Master of Computer Applications student @
+        <a href="https://jaipur.manipal.edu/fos/programs/program-list/master-of-computer-applications.html"
+          target="_blank">
+          Manipal University Jaipur.
+        </a>
+        I did my Bachelor of Business Administration from
+        <a href="https://www.iimrohtak.ac.in/index.php/programmes/ipm" target="blank">
+          IIM Rohtak.
+        </a>
+        I know, big switch. Sometimes you just gotta follow the heart. Poker
+        is my go to party game and F1 my sports talk. Yes, the valorant
+        addiction is real.
+      </p>
+    </div>
+    <hr />
 
-      <!-- skills section -->
-      <div class="skills">
-        <h2>My Skills and Hobbies.</h2>
-        <div class="skill-row">
-          <h3>Web Development</h3>
-          <div class="skill-box">
-            <!-- odd numbered skill images show on the left -->
-            <iconify-icon
-              class="skill-img"
-              icon="mingcute:code-fill"
-            ></iconify-icon>
+    <!-- projects section -->
+    <div class="projects">
+      <h2>Projects.</h2>
+      <div class="project-container">
+        <div class="project-box">
+          <div class="project-description">
+            <h3>IIM Assignments</h3>
+            <hr />
             <p>
-              I learnt coding as a hobby because I found it fascinating how
-              writing a few lines of code lead to beautiful outcomes. I have
-              only started recently though and there is much to learn.
+              A repository of 3 Assignments which were done as part of the Web
+              Development Basics course (BBA-IPM)
+              <br />
+              <br />
+              HTML, CSS and JS
             </p>
           </div>
+          <div class="project-links">
+            <a href="https://x-priyam.github.io/Assignments/IIMR%20-%20IPM%20(Web%20Based%20Development)/Assignment%201/"
+              target="_blank">
+              <iconify-icon icon="healthicons:1-negative"></iconify-icon>
+            </a>
+            <a href="https://x-priyam.github.io/Assignments/IIMR%20-%20IPM%20(Web%20Based%20Development)/Assignment%202/"
+              target="_blank">
+              <iconify-icon icon="healthicons:2-negative"></iconify-icon>
+            </a>
+            <a href="https://x-priyam.github.io/Assignments/IIMR%20-%20IPM%20(Web%20Based%20Development)/Assignment%203/"
+              target="_blank">
+              <iconify-icon icon="healthicons:3-negative"></iconify-icon>
+            </a>
+            <a href="https://github.com/x-priyam/Assignments/tree/main/IIMR%20-%20IPM%20(Web%20Based%20Development)"
+              target="_blank">
+              <iconify-icon icon="mdi:github"></iconify-icon>
+            </a>
+          </div>
         </div>
-        <div class="skill-row">
-          <h3>Poker</h3>
-          <div class="skill-box">
+        <div class="project-box">
+          <div class="project-description">
+            <h3>MUJ Web Assignments</h3>
+            <hr />
             <p>
-              I learnt Poker after watching Casino Royale, the popular James
-              Bond movie. I only play as a hobby though, and never bet any real
-              money in the game.
+              A repository of 2 Assignments which were done as part of the Web
+              Technologies course (MCA-MUJ)
+              <br />
+              <br />
+              Registration Form and Calculator
+              <br />
+              <br />
+              HTML, CSS and JS
             </p>
-            <!-- even numbered skill images show on the right -->
-            <iconify-icon
-              class="skill-img"
-              icon="mdi:cards-playing"
-            ></iconify-icon>
+          </div>
+          <div class="project-links">
+            <a href="https://x-priyam.github.io/Assignments/MUJ%20Web%20Technologies%20Assignments/Registration%20Form/"
+              target="_blank">
+              <iconify-icon icon="mdi:form"></iconify-icon>
+            </a>
+            <a href="https://x-priyam.github.io/Assignments/MUJ%20Web%20Technologies%20Assignments/Calculator/"
+              target="_blank">
+              <iconify-icon icon="solar:calculator-bold"></iconify-icon>
+            </a>
+            <a href="https://github.com/x-priyam/Assignments/tree/main/MUJ%20Web%20Technologies%20Assignments"
+              target="_blank">
+              <iconify-icon icon="mdi:github"></iconify-icon>
+            </a>
+          </div>
+        </div>
+        <div class="project-box">
+          <div class="project-description">
+            <h3>MUJ Labs</h3>
+            <hr />
+            <p>
+              A repository of Lab work which was done as part of different
+              subjects in the MCA course from Manipal University Jaipur
+              <br />
+              <br />
+              Web Dev, C, Java and SQL
+            </p>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/x-priyam/Assignments/tree/main/MUJ%20Web%20Technologies%20Lab" target="_blank">
+              <iconify-icon icon="ic:round-code"></iconify-icon>
+            </a>
+            <a href="https://github.com/x-priyam/Assignments/tree/main/MUJ%20C%20Programming%20Lab" target="_blank">
+              <iconify-icon icon="devicon-plain:c"></iconify-icon>
+            </a>
+            <a href="https://github.com/x-priyam/Assignments/tree/main/MUJ%20Java%20Lab" target="_blank">
+              <iconify-icon icon="nonicons:java-16"></iconify-icon>
+            </a>
+            <a href="https://github.com/x-priyam/Assignments/tree/main/MUJ%20RDBMS%20SQL%20Lab" target="_blank">
+              <iconify-icon icon="mdi:sql-query"></iconify-icon>
+            </a>
+          </div>
+        </div>
+        <div class="project-box">
+          <div class="project-description">
+            <h3>This Page</h3>
+            <hr />
+            <p>
+              Yup, I made this page myself too. I know.
+              <br />
+              <br />
+              Surprising.
+              <br />
+              <br />
+              HTML, CSS and JS
+            </p>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/x-priyam/x-priyam.github.io" target="_blank">
+              <iconify-icon icon="mdi:github"></iconify-icon>
+            </a>
           </div>
         </div>
       </div>
-      <hr />
+    </div>
+    <hr />
 
-      <!-- contact message -->
-      <div class="contact-me">
-        <h2>Get In Touch</h2>
-        <h3>Love Pizza?</h3>
-        <p class="contact-message">I like you already</p>
-        <a class="btn" href="mailto:priyam7911@gmail.com">CONTACT ME</a>
+    <!-- skills section -->
+    <div class="skills">
+      <h2>My Skills and Hobbies.</h2>
+      <div class="skill-row">
+        <h3>Web Development</h3>
+        <div class="skill-box">
+          <!-- odd numbered skill images show on the left -->
+          <iconify-icon class="skill-img" icon="mingcute:code-fill"></iconify-icon>
+          <p>
+            I learnt coding as a hobby because I found it fascinating how
+            writing a few lines of code lead to beautiful outcomes. I have
+            only started recently though and there is much to learn.
+          </p>
+        </div>
+      </div>
+      <div class="skill-row">
+        <h3>Poker</h3>
+        <div class="skill-box">
+          <p>
+            I learnt Poker after watching Casino Royale, the popular James
+            Bond movie. I only play as a hobby though, and never bet any real
+            money in the game.
+          </p>
+          <!-- even numbered skill images show on the right -->
+          <iconify-icon class="skill-img" icon="mdi:cards-playing"></iconify-icon>
+        </div>
       </div>
     </div>
+    <hr />
 
-    <!-- footer -->
-    <div class="bottom-container">
-      <div class="footer-link-box">
-        <a
-          class="footer-link"
-          href="https://www.instagram.com/x.priyam/"
-          target="_blank"
-        >
-          <iconify-icon icon="akar-icons:instagram-fill"></iconify-icon>
-        </a>
-        <a
-          class="footer-link"
-          href="https://discordapp.com/users/517157317137924117"
-          target="_blank"
-        >
-          <iconify-icon icon="bi:discord"></iconify-icon>
-        </a>
-        <a
-          class="footer-link"
-          href="https://open.spotify.com/user/x0hffh5763ep2ezyseo8d1e7o?si=1e728d09d06b47ea"
-          target="_blank"
-        >
-          <iconify-icon icon="bi:spotify"></iconify-icon>
-        </a>
-        <a
-          class="footer-link"
-          href="https://trakt.tv/users/xpriyam"
-          target="_blank"
-        >
-          <iconify-icon icon="simple-icons:trakt"></iconify-icon>
-        </a>
-        <a
-          class="footer-link"
-          href="https://github.com/x-priyam"
-          target="_blank"
-        >
-          <iconify-icon icon="akar-icons:github-fill"></iconify-icon>
-        </a>
-      </div>
-      <p class="copyright">© 2023 Priyam.</p>
+    <!-- contact message -->
+    <div class="contact-me">
+      <h2>Get In Touch</h2>
+      <h3>Love Pizza?</h3>
+      <p class="contact-message">I like you already</p>
+      <a class="btn" href="mailto:priyam7911@gmail.com">CONTACT ME</a>
     </div>
-  </body>
+  </div>
+
+  <!-- footer -->
+  <div class="bottom-container">
+    <div class="footer-link-box">
+      <a class="footer-link" href="https://www.instagram.com/x.priyam/" target="_blank">
+        <iconify-icon icon="akar-icons:instagram-fill"></iconify-icon>
+      </a>
+      <a class="footer-link" href="https://discordapp.com/users/517157317137924117" target="_blank">
+        <iconify-icon icon="bi:discord"></iconify-icon>
+      </a>
+      <a class="footer-link" href="https://open.spotify.com/user/x0hffh5763ep2ezyseo8d1e7o?si=1e728d09d06b47ea"
+        target="_blank">
+        <iconify-icon icon="bi:spotify"></iconify-icon>
+      </a>
+      <a class="footer-link" href="https://trakt.tv/users/xpriyam" target="_blank">
+        <iconify-icon icon="simple-icons:trakt"></iconify-icon>
+      </a>
+      <a class="footer-link" href="https://github.com/x-priyam" target="_blank">
+        <iconify-icon icon="akar-icons:github-fill"></iconify-icon>
+      </a>
+    </div>
+    <p class="copyright">© 2023 Priyam.</p>
+  </div>
+</body>
+
 </html>
