@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap");
 
 :root {
+  /* --animation-time: 300ms; */
   --animation-time: 300ms;
   --accent-color: #66bfbf;
   --seconday-color: #11999e;
@@ -22,14 +23,13 @@
 * {
   transition-duration: var(--animation-time);
   transition-timing-function: linear;
-  transition-property: background-color, color, filter, transform, opacity;
+  transition-property: background-color, color, transform, opacity;
 }
 
 html,
 body {
   margin: 0;
   padding: 0;
-  height: 100%;
 }
 
 body {
@@ -65,11 +65,9 @@ h3 {
 }
 
 hr {
-  border-color: color-mix(
-    in srgb,
-    var(--background-color) 60%,
-    var(--text-color) 40%
-  );
+  border-color: color-mix(in srgb,
+      var(--background-color) 60%,
+      var(--text-color) 40%);
   border-style: none;
   border-top-style: dotted;
   border-width: 6px;
