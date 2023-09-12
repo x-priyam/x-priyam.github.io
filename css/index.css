@@ -1,8 +1,3 @@
-/* A lot of images are from an icon-font */
-/* size of images must be set by font-size */
-/* CSS doesn't support setting font-size according to parent width */
-/* this we use JS to set value of computer width to font size */
-
 /* initial wallpaper */
 
 .top-container {
@@ -48,10 +43,14 @@
   grid-area: theme-switch;
   color: var(--accent-color);
   view-transition-name: theme-switch;
+}
+
+.bounce-animation {
   animation-name: bounce;
-  animation-duration: 1s;
+  animation-duration: 2s;
   animation-timing-function: ease-in;
   animation-delay: 1s;
+  animation-iteration-count: infinite;
 }
 
 @keyframes bounce {
@@ -59,16 +58,20 @@
     transform: translateY(0);
   }
 
-  25% {
+  12.5% {
     transform: translateY(-50%);
   }
 
-  50% {
+  25% {
     transform: translateY(0%);
   }
 
-  75% {
+  37.5% {
     transform: translateY(-25%);
+  }
+
+  50% {
+    transform: translateY(0);
   }
 
   100% {
@@ -179,12 +182,12 @@
   gap: 2rem;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .project-box .project-links a {
   color: var(--background-color);
-  font-size: 1.5rem;
+  width: 1.5rem
 }
 
 .project-box a:hover {
@@ -276,7 +279,7 @@
 
 .footer-link iconify-icon {
   color: var(--seconday-color);
-  font-size: 1.5rem;
+  width: 1.5rem;
   margin: 10px 20px;
 }
 
@@ -291,6 +294,14 @@
 }
 
 @media screen and (min-width: 800px) {
+  .bounce-animation {
+    animation-iteration-count: 1;
+  }
+
+  #theme-switch:hover {
+    transform: scale(1.25);
+  }
+
   .profile-img {
     width: 25%;
   }
