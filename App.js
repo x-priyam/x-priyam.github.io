@@ -48,6 +48,7 @@ window.addEventListener("load", async () => {
   let projectBox = document.querySelector(".project-box");
   projectBox.replaceWith(currProject.getBox());
 
+  const numberOfProjects = await Project.getCount();
   // Replace old project box with project box which is previous in position
   document
     .querySelector("#project-scroll-prev")
@@ -62,7 +63,7 @@ window.addEventListener("load", async () => {
       // otherwise, it's current - 1
       let prevProject = new Project();
       if (currProject.pageNumber == 1) {
-        await prevProject.load(await Project.getCount());
+        await prevProject.load(numberOfProjects);
       } else {
         await prevProject.load(currProject.pageNumber - 1);
       }
@@ -95,7 +96,7 @@ window.addEventListener("load", async () => {
       // then next page number must be 1
       // otherwise, it's current + 1
       let nextProject = new Project();
-      if (currProject.pageNumber == (await Project.getCount())) {
+      if (currProject.pageNumber == numberOfProjects) {
         await nextProject.load(1);
       } else {
         await nextProject.load(currProject.pageNumber + 1);
@@ -122,8 +123,9 @@ window.addEventListener("load", async () => {
   skillContainer.removeChild(document.querySelector(".skill-box")); // removing template
 
   Skill.setLocation(skillFolder);
+  const numberOfSkills = await Skill.getCount();
   let currSkill = new Skill();
-  for (let i = 1; i <= (await Skill.getCount()); i++) {
+  for (let i = 1; i <= numberOfSkills; i++) {
     await currSkill.load(i);
     skillContainer.appendChild(currSkill.getBox());
   }

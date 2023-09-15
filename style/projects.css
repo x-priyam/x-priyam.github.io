@@ -80,12 +80,12 @@
 }
 
 .project-box .project-links {
-  gap: 10%;
   display: grid;
   grid-template-rows: 1fr;
   grid-auto-flow: column;
   grid-auto-columns: 1fr;
   place-content: center;
+  gap: 20%;
 }
 
 .project-box .project-links a {
@@ -136,11 +136,19 @@
 }
 
 .project-scroller iconify-icon:hover {
-  color: var(--primary-color);
+  color: var(--accent-color);
 }
 
 @media screen and (min-width: 800px) {
   .project-box {
     width: 60%;
+  }
+
+  .project-box .project-links {
+    gap: 60%;
+  }
+
+  .project-box .project-links a {
+    width: 2rem;
   }
 }

@@ -16,6 +16,7 @@
     "skill-desc skill-desc skill-desc";
   place-items: center;
   row-gap: 1rem;
+  text-align: center;
 }
 
 .skill-box h3 {
@@ -24,7 +25,6 @@
 
 .skill-box p {
   grid-area: skill-desc;
-  text-align: center;
 }
 
 .skill-box .skill-icon {
@@ -44,6 +44,7 @@
     grid-template-areas:
       "skill-name skill-name skill-name"
       "skill-icon skill-desc skill-desc";
+    text-align: left;
   }
 
   /* even numbered skills have icons at right */
@@ -51,5 +52,6 @@
     grid-template-areas:
       "skill-name skill-name skill-name"
       "skill-desc skill-desc skill-icon";
+    text-align: right;
   }
 }
