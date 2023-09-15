@@ -1,22 +1,22 @@
 import { Page } from "./pages.js";
 
 class Skill extends Page {
-  getSkillBox() {
+  static #folderLocation;
+
+  static setLocation(folderLocation) {
+    Skill.#folderLocation = folderLocation;
+  }
+
+  static async getCount() {
+    return await Skill._getNumberOfPages(Skill.#folderLocation);
+  }
+
+  async load(skillNumber) {
+    await this._loadPageContent(Skill.#folderLocation, skillNumber);
+  }
+
+  getBox() {
     return this.pageContent.querySelector(".skill-box");
-  }
-
-  async next() {
-    if (this.pageNumber == Project.numberOfPages) {
-      throw new Error("Going beyond Limit");
-    }
-    return await Project.build(this.pageNumber + 1);
-  }
-
-  async prev() {
-    if (this.pageNumber == 1) {
-      throw new Error("Going beyond Limit");
-    }
-    return await Project.build(this.pageNumber - 1);
   }
 }
 

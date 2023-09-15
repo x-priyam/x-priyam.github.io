@@ -1,6 +1,9 @@
 import { Project } from "./modules/projects.js";
 import { Skill } from "./modules/skills.js";
 
+const projectFolder = "/pages/projects/";
+const skillFolder = "/pages/skills/";
+
 // set the theme switch icon matching the current theme
 async function setThemeIcon() {
   let themeIcon = document.querySelector("#theme-switch");
@@ -38,10 +41,12 @@ window.addEventListener("load", async () => {
     });
 
   // load the first project
+  Project.setLocation(projectFolder);
+  let currProject = new Project();
+  await currProject.load(1);
+
   let projectBox = document.querySelector(".project-box");
-  await Project.setNumberOfPages("/pages/projects/");
-  let currProject = new Project(await Project.build(1));
-  projectBox.replaceWith(currProject.getProjectBox());
+  projectBox.replaceWith(currProject.getBox());
 
   // Replace old project box with project box which is previous in position
   document
@@ -49,47 +54,78 @@ window.addEventListener("load", async () => {
     .addEventListener("click", async () => {
       // projectBox must be reselected from the DOM for it to update
       projectBox = document.querySelector(".project-box");
-      projectBox.classList.add("project-prev"); // animation class
-      currProject = new Project(await currProject.prev());
+      projectBox.classList.add("project-prev"); // Animation class
 
+      // For infinite carousel of projects:
+      // if current page number is 1
+      // then previous page number must be the last
+      // otherwise, it's current - 1
+      let prevProject = new Project();
+      if (currProject.pageNumber == 1) {
+        await prevProject.load(await Project.getCount());
+      } else {
+        await prevProject.load(currProject.pageNumber - 1);
+      }
       const transition = document.startViewTransition(() => {
-        projectBox.replaceWith(currProject.getProjectBox());
+        projectBox.replaceWith(prevProject.getBox());
+
         // projectBox must be reselected from the DOM for it to update
         projectBox = document.querySelector(".project-box");
-        projectBox.classList.add("project-prev"); // animation class
+        projectBox.classList.add("project-prev"); // Animation class
       });
 
       await transition.finished;
+
+      // Post animation:
+      // Set the current project object to the previous project object
+      // Remove the animation class
+      currProject = prevProject;
       projectBox.classList.remove("project-prev");
     });
 
-  // Replace old project box with project box which is next in position
   document
     .querySelector("#project-scroll-next")
     .addEventListener("click", async () => {
       // projectBox must be reselected from the DOM for it to update
       projectBox = document.querySelector(".project-box");
-      projectBox.classList.add("project-next"); // animation class
-      currProject = new Project(await currProject.next());
+      projectBox.classList.add("project-next"); // Animation class
 
+      // For infinite carousel of projects:
+      // if current page number is last
+      // then next page number must be 1
+      // otherwise, it's current + 1
+      let nextProject = new Project();
+      if (currProject.pageNumber == (await Project.getCount())) {
+        await nextProject.load(1);
+      } else {
+        await nextProject.load(currProject.pageNumber + 1);
+      }
       const transition = document.startViewTransition(() => {
-        projectBox.replaceWith(currProject.getProjectBox());
+        projectBox.replaceWith(nextProject.getBox());
+
         // projectBox must be reselected from the DOM for it to update
         projectBox = document.querySelector(".project-box");
-        projectBox.classList.add("project-next"); // animation class
+        projectBox.classList.add("project-next"); // Animation class
       });
 
       await transition.finished;
+
+      // Post animation:
+      // Set the current project object to the next project object
+      // Remove the animation class
+      currProject = nextProject;
       projectBox.classList.remove("project-next");
     });
 
   // load all skills
   let skillContainer = document.querySelector(".skills");
   skillContainer.removeChild(document.querySelector(".skill-box")); // removing template
-  await Skill.setNumberOfPages("/pages/skills/");
-  for (let i = 1; i <= Skill.numberOfPages; i++) {
-    let skillBox = new Skill(await Skill.build(i)).getSkillBox();
-    skillContainer.appendChild(skillBox);
+
+  Skill.setLocation(skillFolder);
+  let currSkill = new Skill();
+  for (let i = 1; i <= (await Skill.getCount()); i++) {
+    await currSkill.load(i);
+    skillContainer.appendChild(currSkill.getBox());
   }
 
   console.log("Page Loaded");
