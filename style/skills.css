@@ -1,0 +1,55 @@
+/* skills section */
+.skills {
+  margin: 5rem auto;
+}
+
+.skill-box {
+  margin: 5rem auto;
+  width: 80%;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 2fr auto;
+  grid-template-areas:
+    "skill-name skill-name skill-name"
+    ". skill-icon ."
+    ". skill-icon ."
+    "skill-desc skill-desc skill-desc";
+  place-items: center;
+  row-gap: 1rem;
+}
+
+.skill-box h3 {
+  grid-column: 1 / 4;
+}
+
+.skill-box p {
+  grid-area: skill-desc;
+  text-align: center;
+}
+
+.skill-box .skill-icon {
+  grid-area: skill-icon;
+}
+
+@media screen and (min-width: 800px) {
+  .skill-box {
+    width: 50%;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto 1fr;
+    column-gap: 2rem;
+  }
+
+  /* odd numbered skills have icons at left */
+  .skill-box:nth-of-type(odd) {
+    grid-template-areas:
+      "skill-name skill-name skill-name"
+      "skill-icon skill-desc skill-desc";
+  }
+
+  /* even numbered skills have icons at right */
+  .skill-box:nth-of-type(even) {
+    grid-template-areas:
+      "skill-name skill-name skill-name"
+      "skill-desc skill-desc skill-icon";
+  }
+}

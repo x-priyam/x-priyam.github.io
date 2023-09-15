@@ -1,0 +1,86 @@
+/* Animations */
+@keyframes theme-switch-bounce {
+  0% {
+    transform: translateY(0);
+  }
+
+  12.5% {
+    transform: translateY(-50%);
+  }
+
+  25% {
+    transform: translateY(0%);
+  }
+
+  37.5% {
+    transform: translateY(-25%);
+  }
+
+  50% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes theme-switch-slide-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes theme-switch-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* theme switch button */
+#theme-switch {
+  grid-area: theme-switch;
+  color: var(--accent-color);
+}
+
+.theme-switch-animation {
+  view-transition-name: theme-switch;
+}
+
+::view-transition-old(theme-switch) {
+  animation-name: theme-switch-slide-out;
+}
+
+::view-transition-new(theme-switch) {
+  animation-name: theme-switch-slide-in;
+}
+
+.bounce-animation {
+  animation-name: theme-switch-bounce;
+  animation-duration: 2s;
+  animation-timing-function: ease-in;
+  animation-delay: 1s;
+  animation-iteration-count: infinite;
+}
+
+@media screen and (min-width: 800px) {
+  .bounce-animation {
+    animation-iteration-count: 1;
+  }
+
+  #theme-switch:hover {
+    transform: scale(1.25);
+  }
+}
