@@ -8,18 +8,27 @@ const skillFolder = "/pages/skills/";
 async function setThemeIcon() {
   let themeIcon = document.querySelector("#theme-switch");
 
-  themeIcon.classList.add("theme-switch-animation");
-  const transition = document.startViewTransition(() => {
-    // iconify-icons load inner svg element using the icon attribuite
+  // If View Transitions API is not supported
+  if (!document.startViewTransition) {
     if (document.documentElement.classList.contains("light-theme")) {
       themeIcon.setAttribute("icon", "tabler:sun-filled");
     } else {
       themeIcon.setAttribute("icon", "tabler:moon-filled");
     }
-  });
+  } else {
+    themeIcon.classList.add("theme-switch-animation");
+    const transition = document.startViewTransition(() => {
+      // iconify-icons load inner svg element using the icon attribuite
+      if (document.documentElement.classList.contains("light-theme")) {
+        themeIcon.setAttribute("icon", "tabler:sun-filled");
+      } else {
+        themeIcon.setAttribute("icon", "tabler:moon-filled");
+      }
+    });
 
-  await transition.finished;
-  themeIcon.classList.remove("theme-switch-animation");
+    await transition.finished;
+    themeIcon.classList.remove("theme-switch-animation");
+  }
 
   themeIcon.classList.add("bounce-animation");
   return;
@@ -55,7 +64,6 @@ window.addEventListener("load", async () => {
     .addEventListener("click", async () => {
       // projectBox must be reselected from the DOM for it to update
       projectBox = document.querySelector(".project-box");
-      projectBox.classList.add("project-prev"); // Animation class
 
       // For infinite carousel of projects:
       // if current page number is 1
@@ -67,21 +75,28 @@ window.addEventListener("load", async () => {
       } else {
         await prevProject.load(currProject.pageNumber - 1);
       }
-      const transition = document.startViewTransition(() => {
+
+      // If View Transitions API is not supported
+      if (!document.startViewTransition) {
         projectBox.replaceWith(prevProject.getBox());
-
-        // projectBox must be reselected from the DOM for it to update
-        projectBox = document.querySelector(".project-box");
+      } else {
         projectBox.classList.add("project-prev"); // Animation class
-      });
+        const transition = document.startViewTransition(() => {
+          projectBox.replaceWith(prevProject.getBox());
 
-      await transition.finished;
+          // projectBox must be reselected from the DOM for it to update
+          projectBox = document.querySelector(".project-box");
+          projectBox.classList.add("project-prev"); // Animation class
+        });
 
-      // Post animation:
+        await transition.finished;
+        // Post animation:
+        // Remove the animation class
+        projectBox.classList.remove("project-prev");
+      }
+
       // Set the current project object to the previous project object
-      // Remove the animation class
       currProject = prevProject;
-      projectBox.classList.remove("project-prev");
     });
 
   document
@@ -89,7 +104,6 @@ window.addEventListener("load", async () => {
     .addEventListener("click", async () => {
       // projectBox must be reselected from the DOM for it to update
       projectBox = document.querySelector(".project-box");
-      projectBox.classList.add("project-next"); // Animation class
 
       // For infinite carousel of projects:
       // if current page number is last
@@ -101,21 +115,28 @@ window.addEventListener("load", async () => {
       } else {
         await nextProject.load(currProject.pageNumber + 1);
       }
-      const transition = document.startViewTransition(() => {
+
+      // If View Transitions API is not supported
+      if (!document.startViewTransition) {
         projectBox.replaceWith(nextProject.getBox());
-
-        // projectBox must be reselected from the DOM for it to update
-        projectBox = document.querySelector(".project-box");
+      } else {
         projectBox.classList.add("project-next"); // Animation class
-      });
+        const transition = document.startViewTransition(() => {
+          projectBox.replaceWith(nextProject.getBox());
 
-      await transition.finished;
+          // projectBox must be reselected from the DOM for it to update
+          projectBox = document.querySelector(".project-box");
+          projectBox.classList.add("project-next"); // Animation class
+        });
 
-      // Post animation:
-      // Set the current project object to the next project object
-      // Remove the animation class
+        await transition.finished;
+        // Post animation:
+        // Remove the animation class
+        projectBox.classList.remove("project-next");
+      }
+
+      // Set the current project object to the previous project object
       currProject = nextProject;
-      projectBox.classList.remove("project-next");
     });
 
   // load all skills
