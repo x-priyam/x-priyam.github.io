@@ -90,12 +90,6 @@ p {
   line-height: 2;
 }
 
-iconify-icon {
-  display: grid;
-  place-content: center;
-  place-items: center;
-}
-
 @media screen and (min-width: 800px) {
   hr {
     width: 4%;

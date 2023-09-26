@@ -27,15 +27,15 @@
 /* Project Block */
 
 .projects {
-  max-height: 85dvh;
-  min-height: 85dvh;
-  height: 85dvh;
+  max-height: 85vh;
+  min-height: 85vh;
+  height: 85vh;
   padding: 0 5%;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto minmax(0, 1fr) auto;
   place-items: center;
-  row-gap: 5dvh;
+  row-gap: 5vh;
 }
 
 .projects h2 {
@@ -46,13 +46,13 @@
   align-self: stretch;
   background-color: var(--accent-color);
   width: 90%;
-  padding: 2.5dvh 5%;
+  padding: 2.5vh 5%;
   border-radius: 1rem;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 3px 1fr auto;
   place-items: center;
-  row-gap: 2.5dvh;
+  row-gap: 2.5vh;
 }
 
 .project-box h3 {
