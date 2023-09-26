@@ -52,7 +52,13 @@
 /* theme switch button */
 #theme-switch {
   grid-area: theme-switch;
+  background-color: unset;
+  border: none;
+}
+
+#theme-switch iconify-icon {
   color: var(--accent-color);
+  height: 100%;
 }
 
 .theme-switch-animation {
@@ -80,7 +86,7 @@
     animation-iteration-count: 1;
   }
 
-  #theme-switch:hover {
+  #theme-switch:hover iconify-icon {
     transform: scale(1.25);
   }
 }

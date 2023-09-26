@@ -33,12 +33,6 @@
   animation-timing-function: linear;
 }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
-
 body {
   background-color: var(--background-color);
   color: var(--text-color);
@@ -88,6 +82,10 @@ hr {
 
 p {
   line-height: 2;
+}
+
+button {
+  cursor: pointer;
 }
 
 @media screen and (min-width: 800px) {

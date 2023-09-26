@@ -130,12 +130,17 @@
   gap: 1rem;
 }
 
+.project-scroller button {
+  background-color: unset;
+  border: none;
+}
+
 .project-scroller iconify-icon {
   color: var(--seconday-color);
   width: 3rem;
 }
 
-.project-scroller iconify-icon:hover {
+.project-scroller button:hover iconify-icon {
   color: var(--accent-color);
 }
 

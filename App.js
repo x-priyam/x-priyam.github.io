@@ -6,7 +6,7 @@ const skillFolder = "/pages/skills/";
 
 // set the theme switch icon matching the current theme
 async function setThemeIcon() {
-  let themeIcon = document.querySelector("#theme-switch");
+  let themeIcon = document.querySelector("#theme-switch iconify-icon");
 
   // If View Transitions API is not supported
   if (!document.startViewTransition) {
