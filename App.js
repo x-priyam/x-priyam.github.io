@@ -18,7 +18,7 @@ async function setThemeIcon() {
   } else {
     themeIcon.classList.add("theme-switch-animation");
     const transition = document.startViewTransition(() => {
-      // iconify-icons load inner svg element using the icon attribuite
+      // iconify-icons load inner svg element using the icon attribute
       if (document.documentElement.classList.contains("light-theme")) {
         themeIcon.setAttribute("icon", "tabler:sun-filled");
       } else {
