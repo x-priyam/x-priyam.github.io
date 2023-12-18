@@ -23,7 +23,7 @@ class Page {
     this.pageNumber = pageNumber;
     this.pageContent = new DOMParser().parseFromString(
       await (await fetch(pageFolder + pageNumber + ".html")).text(),
-      "text/html"
+      "text/html",
     );
     // console.log("Block Read:");
     // console.log(pageContent);
